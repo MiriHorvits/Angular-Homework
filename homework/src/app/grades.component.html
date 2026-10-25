@@ -1,0 +1,24 @@
+<main class="grades-card" dir="rtl">
+  <h1>הציונים שלי</h1>
+  <p class="description">ציוני המקצועות וסטטוס המעבר</p>
+
+  <ul class="grades-list">
+    @for (subjectGrade of grades; track subjectGrade.subject) {
+      <li
+        class="grade-row"
+        [class.failed]="subjectGrade.grade <= 60"
+      >
+        <span class="subject">{{ subjectGrade.subject }}</span>
+        <span class="grade">{{ subjectGrade.grade }}%</span>
+        <span class="status">
+          {{ subjectGrade.grade > 60 ? 'עבר' : 'לא עבר' }}
+        </span>
+      </li>
+    }
+  </ul>
+
+  <p class="average">
+    ממוצע הציונים:
+    <strong>{{ averageGrade | number: '1.0-1' }}%</strong>
+  </p>
+</main>

@@ -1,0 +1,79 @@
+:host {
+  display: block;
+  padding: 40px 16px;
+}
+
+.grades-card {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 28px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 16px 32px rgba(31, 71, 136, 0.14);
+  color: #1e2a38;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.description {
+  margin: 8px 0 24px;
+  text-align: center;
+  color: #58677a;
+}
+
+.grades-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.grade-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  border: 1px solid #dce5f2;
+  border-radius: 10px;
+  background: #f9fbff;
+}
+
+.subject {
+  font-weight: 700;
+}
+
+.status {
+  color: #18743a;
+  font-weight: 700;
+}
+
+.grade-row.failed {
+  border-color: #f0b7b7;
+  background: #fff1f1;
+  color: #b42318;
+  font-weight: 700;
+}
+
+.average {
+  margin: 22px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid #dce5f2;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 420px) {
+  .grades-card {
+    padding: 22px 16px;
+  }
+
+  .grade-row {
+    gap: 8px;
+    padding: 12px;
+  }
+}

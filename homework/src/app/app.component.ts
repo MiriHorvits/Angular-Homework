@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { LoginComponent } from './login.component';
+import { GradesComponent } from './grades.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [LoginComponent],
-  template: '<app-login />',
+  imports: [GradesComponent],
+  template: '<app-grades />',
 })
 export class AppComponent {}
