@@ -1,12 +1,10 @@
 # Dependencies
-/node_modules
+node_modules/
 
 # Build output
-/dist
-/out-tsc
-
-# Angular cache
-/.angular
+dist/
+out-tsc/
+.angular/
 
 # Editor / OS
 .vscode/*
