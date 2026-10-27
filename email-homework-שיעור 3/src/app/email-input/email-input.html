@@ -1,0 +1,20 @@
+<section dir="rtl" class="email-card">
+  <h1>הזנת כתובת מייל</h1>
+
+  <label for="email">כתובת מייל:</label>
+  <input
+    id="email"
+    type="text"
+    [value]="email"
+    (input)="onInput($event)"
+    (keydown.enter)="showEmail()"
+    title="חובה למלא כתובת מייל"
+    aria-label="כתובת מייל"
+  />
+
+  <button type="button" (click)="addGmail()">@gmail.com</button>
+
+  @if (submittedEmail) {
+    <h2>כתובת המייל שנקלטה היא {{ submittedEmail }}</h2>
+  }
+</section>
