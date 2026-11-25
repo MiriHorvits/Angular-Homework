@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ArnonaRequestComponent } from './arnona-request/arnona-request';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, ArnonaRequestComponent],
   template: `
     <div class="form-card">
       <h1>כניסה להתקנת תוכנות לימודיות על המחשב</h1>
@@ -27,6 +28,7 @@ import { FormsModule } from '@angular/forms';
         הכנס
       </button>
     </div>
+    <app-arnona-request></app-arnona-request>
   `,
   styles: [
     `

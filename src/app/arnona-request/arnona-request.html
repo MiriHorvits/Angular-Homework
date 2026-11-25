@@ -1,0 +1,78 @@
+<form class="request-card" [attr.dir]="direction()" (ngSubmit)="onSubmit()">
+  <div class="header">
+    <h2>{{ t().title }}</h2>
+    <button type="button" class="lang-btn" (click)="toggleLanguage()">
+      {{ language() === 'he' ? 'EN' : 'עב' }}
+    </button>
+  </div>
+
+  <label class="field">
+    <span>{{ t().fullName }}</span>
+    <input
+      type="text"
+      name="fullName"
+      [ngModel]="model().fullName"
+      (ngModelChange)="updateField('fullName', $event)"
+    />
+  </label>
+
+  <label class="field">
+    <span>{{ t().phone }}</span>
+    <input
+      type="tel"
+      name="phone"
+      [ngModel]="model().phone"
+      (ngModelChange)="updateField('phone', $event)"
+    />
+  </label>
+
+  <label class="field">
+    <span>{{ t().address }}</span>
+    <input
+      type="text"
+      name="address"
+      [ngModel]="model().address"
+      (ngModelChange)="updateField('address', $event)"
+    />
+  </label>
+
+  <label class="field">
+    <span>{{ t().childrenCount }}</span>
+    <input
+      type="number"
+      name="childrenCount"
+      min="0"
+      [ngModel]="model().childrenCount"
+      (ngModelChange)="updateField('childrenCount', $event)"
+    />
+  </label>
+
+  <label class="field">
+    <span>{{ t().incomePerPerson }}</span>
+    <input
+      type="number"
+      name="incomePerPerson"
+      min="0"
+      [ngModel]="model().incomePerPerson"
+      (ngModelChange)="updateField('incomePerPerson', $event)"
+    />
+  </label>
+
+  <label class="field">
+    <span>{{ t().notes }}</span>
+    <textarea
+      name="notes"
+      rows="3"
+      [ngModel]="model().notes"
+      (ngModelChange)="updateField('notes', $event)"
+    ></textarea>
+  </label>
+
+  <button type="submit" class="submit-btn">{{ t().send }}</button>
+
+  @if (message()) {
+    <p class="message" [class.error]="messageType() === 'error'" [class.success]="messageType() === 'success'">
+      {{ message() }}
+    </p>
+  }
+</form>
